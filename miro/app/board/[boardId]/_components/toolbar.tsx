@@ -2,7 +2,7 @@ import React from "react";
 
 const Toolbar = () => {
   return (
-    <div className="absolute translate-y-[100%] mx-auto left-2 flex flex-col gap-y-4">
+    <div className="absolute top-[50%] -translate-y-[50%] mx-auto left-2 flex flex-col gap-y-4">
       <div className="bg-white rounded-md p-1.5 flex gap-y-1 flex-col items-center shadow-md">
         <div>Pencil</div>
         <div>square</div>
@@ -14,6 +14,12 @@ const Toolbar = () => {
         <div>Redo</div>
       </div>
     </div>
+  );
+};
+
+Toolbar.Skeleton = function ToolbarSkeleton() {
+  return (
+    <div className="absolute top-[50%] -translate-y-[50%] mx-auto left-2 flex flex-col bg-white gap-y-4 h-[360px] w-[52px] rounded-md shadow-md" />
   );
 };
 
