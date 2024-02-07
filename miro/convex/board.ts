@@ -1,4 +1,4 @@
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 const images = [
@@ -166,6 +166,17 @@ export const favorite = mutation({
       boardId: board._id,
       orgId: args.orgId,
     });
+
+    return board;
+  },
+});
+
+export const get = query({
+  args: {
+    id: v.id("boards"),
+  },
+  handler: async (ctx, agrs) => {
+    const board = await ctx.db.get(agrs.id);
 
     return board;
   },
